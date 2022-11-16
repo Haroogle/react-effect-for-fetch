@@ -9,7 +9,7 @@ function ArtsSection() {
       .then((res) => res.json())
       .then((gallery) => setArtData(gallery.data));
   }, []);
-  console.log(artData);
+  
   return (
     <section>
       <h2>Arts Section</h2>

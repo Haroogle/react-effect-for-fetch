@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import UserList from "./components/UsersList";
 
 function UsersSection() {
   const [userData, setUserData] = useState([]);
@@ -12,20 +13,7 @@ function UsersSection() {
     <section>
       <h2>Users Section</h2>
       <div className="scroll-container">
-        <ul className="users-list">
-          {userData.map((user, index) => {
-            const gender = user.gender === "female";
-            return (
-              <li key={index} className={gender ? "bg-pink" : "bg-blue"}>
-                <img src={`${user.picture.medium}`} alt={`${user.name}`} />
-                <h3>
-                  {user.name.title} {user.name.first} {user.name.last}
-                </h3>
-                <p>{user.email}</p>
-              </li>
-            );
-          })}
-        </ul>
+        <UserList userData={userData} />
       </div>
     </section>
   );
